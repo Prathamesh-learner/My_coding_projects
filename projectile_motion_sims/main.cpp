@@ -2,7 +2,7 @@
 #include <raylib.h>
 
 // Variables
-double gravity = -9.80665; // meters per second squared
+double gravity = 9.80665; // meters per second squared
 double ball_mass = 5.0; // kilograms
 double ball_x = 20.0; // meters
 double ball_y = 9.80;  // meters
@@ -48,8 +48,8 @@ struct ball
             DrawCircle(bx, by, 20, WHITE);
             t += dt;
             // bx += vxb*dt;
-            vyb += acc * dt;
-            by -= vyb * dt;
+            vyb -= acc * dt;
+            by += vyb * dt;
         }
         else
         {
